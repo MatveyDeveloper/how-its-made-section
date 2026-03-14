@@ -1,6 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Seymour+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Titan+One&display=swap');
 
 .hm {
+  box-sizing: border-box;
   background-color: #fff0f5;
   padding: 80px 20px;
   font-family: 'Montserrat', sans-serif;
@@ -28,17 +29,17 @@
 
 .hm__ttl {
   color: #d41443;
-  font-family: 'Seymour One', sans-serif;
-  font-size: 48px;
+  font-family: 'Titan One', cursive;
+  font-size: 58px;
   margin: 0;
   text-transform: uppercase;
-  line-height: 1.2;
+  line-height: 1.1;
 }
 
 .hm__main {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 60px;
+  gap: 40px;
   align-items: center;
   margin-bottom: 80px;
 }
@@ -52,6 +53,7 @@
 .hm__img {
   max-width: 100%;
   height: auto;
+  display: block;
 }
 
 .hm__txt {
@@ -71,6 +73,11 @@
   text-decoration: none;
   font-weight: 700;
   font-size: 14px;
+  transition: transform 0.2s ease;
+}
+
+.hm__btn:hover {
+  transform: scale(1.05);
 }
 
 .hm__btn::after {
@@ -81,15 +88,15 @@
 .hm__stats {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 30px;
+  gap: 20px;
 }
 
 .hm__val {
   display: block;
   font-size: 36px;
   color: #d41443;
-  margin-bottom: 10px;
-  font-family: 'Seymour One', sans-serif;
+  margin-bottom: 5px;
+  font-family: 'Titan One', cursive;
 }
 
 .hm__sub {
@@ -97,15 +104,28 @@
   margin: 0;
   color: #000;
   font-weight: 700;
-  line-height: 1.5;
+  line-height: 1.4;
 }
 
 @media (max-width: 992px) {
-  .hm__main { grid-template-columns: 1fr; }
-  .hm__ttl { font-size: 34px; }
+  .hm { padding: 60px 15px; }
+  .hm__main { 
+    grid-template-columns: 1fr; 
+    text-align: center;
+  }
   .hm__visual { order: -1; }
+  .hm__ttl { font-size: 42px; }
+  .hm__btn { margin: 0 auto; }
 }
 
 @media (max-width: 768px) {
-  .hm__stats { grid-template-columns: 1fr; text-align: center; }
+  .hm__stats { 
+    grid-template-columns: 1fr; 
+    gap: 30px;
+  }
+  .hm__ttl { font-size: 32px; }
+}
+
+@media (max-width: 480px) {
+  .hm__val { font-size: 28px; }
 }
