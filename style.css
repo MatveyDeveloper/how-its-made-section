@@ -2,14 +2,11 @@
 
 .hm {
   box-sizing: border-box;
-  background-color: #fff0f5;
+  background: #fff0f5 url('splashes.png') center / contain no-repeat;
   padding: 80px 20px;
   font-family: 'Montserrat', sans-serif;
   color: #4a4a4a;
-}
-
-.hm__wrap {
-  max-width: 1200px;
+  max-width: 1240px; /* Заменяет wrap */
   margin: 0 auto;
 }
 
@@ -30,7 +27,7 @@
 .hm__ttl {
   color: #d41443;
   font-family: 'Titan One', cursive;
-  font-size: 58px;
+  font-size: clamp(32px, 5vw, 58px); /* Резиновый заголовок */
   margin: 0;
   text-transform: uppercase;
   line-height: 1.1;
@@ -38,51 +35,41 @@
 
 .hm__main {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 40px;
   align-items: center;
   margin-bottom: 80px;
-}
-
-.hm__visual {
-  display: flex;
-  justify-content: center;
-  background: url('splashes.png') center / contain no-repeat;
 }
 
 .hm__img {
   max-width: 100%;
   height: auto;
   display: block;
+  margin: 0 auto;
 }
 
 .hm__txt {
   font-size: 14px;
   line-height: 1.8;
-  margin: 0 0 25px;
-  letter-spacing: 0.04em;
+  margin-bottom: 25px;
 }
 
 .hm__btn {
-  display: inline-flex;
-  align-items: center;
+  display: inline-block;
   background: #ffffff;
   color: #d41443;
-  padding: 12px 28px;
+  padding: 12px 35px;
   border-radius: 25px;
   text-decoration: none;
   font-weight: 700;
-  font-size: 14px;
-  transition: transform 0.2s ease;
+  transition: 0.3s ease;
+  box-shadow: 0 4px 15px rgba(212, 20, 67, 0.1);
 }
 
 .hm__btn:hover {
-  transform: scale(1.05);
-}
-
-.hm__btn::after {
-  content: '>';
-  margin-left: 10px;
+  background: #d41443;
+  color: #fff;
+  transform: translateY(-2px);
 }
 
 .hm__stats {
@@ -94,87 +81,34 @@
 .hm__item {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
+  text-align: center;
 }
 
 .hm__icon {
-  margin-bottom: 20px;
   height: 50px;
-  display: flex;
-  align-items: flex-end;
-}
-
-.hm__icon img {
-  display: block;
-  max-width: 100%;
-  height: auto;
+  width: auto;
+  margin-bottom: 15px;
+  object-fit: contain;
 }
 
 .hm__val {
-  display: block;
-  font-size: 36px;
-  color: #d41443;
-  margin-bottom: 5px;
   font-family: 'Titan One', cursive;
-}
-
-.hm__sub {
-  font-size: 12px;
-  margin: 0;
-  color: #000;
-  font-weight: 700;
-  line-height: 1.4;
+  font-size: clamp(24px, 4vw, 36px);
+  color: #d41443;
 }
 
 /* Адаптив */
-@media (max-width: 992px) {
-  .hm { 
-    padding: 60px 15px; 
-  }
+@media (max-width: 768px) {
+  .hm { padding: 40px 15px; }
   
   .hm__main { 
-    grid-template-columns: 1fr; 
-    text-align: center;
+    grid-template-columns: 1fr;
+    text-align: center; 
+  }
+
+  .hm__stats {
+    grid-template-columns: 1fr;
     gap: 30px;
-  }
-  
-  .hm__visual { 
-    order: -1; 
-  }
-  
-  .hm__ttl { 
-    font-size: 42px; 
-  }
-  
-  .hm__btn { 
-    margin: 0 auto; 
-  }
-
-  .hm__item {
-    align-items: center;
-    text-align: center;
-  }
-
-  .hm__icon {
-    justify-content: center;
-  }
-}
-
-@media (max-width: 768px) {
-  .hm__stats { 
-    grid-template-columns: 1fr; 
-    gap: 40px;
-    max-width: 400px;
-    margin: 0 auto;
-  }
-  
-  .hm__ttl { 
-    font-size: 32px; 
-  }
-}
-
-@media (max-width: 480px) {
-  .hm__val { 
-    font-size: 28px; 
   }
 }
