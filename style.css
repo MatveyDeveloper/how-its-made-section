@@ -37,8 +37,9 @@
 
 .hm__pre {
   color: var(--color-secondary-title-color);
+  font-family: 'Titan One', cursive;
   font-size: 18px;
-  font-weight: 700;
+  font-weight: 400;
   display: block;
   letter-spacing: 0.12em;
   margin-bottom: 15px;
@@ -51,6 +52,7 @@
   margin: 0;
   text-transform: uppercase;
   line-height: 1.1;
+  font-weight: 400;
 }
 
 .hm__main {
@@ -123,8 +125,9 @@
 
 .hm__val {
   font-family: 'Titan One', cursive;
-  font-size: clamp(24px, 4vw, 36px);
+  font-size: clamp(38px, 6vw, 58px);
   color: var(--color-primary);
+  font-weight: 400;
 }
 
 @media (max-width: 1200px) {
