@@ -1,11 +1,31 @@
+:root {
+  --color-white: #ffffff;
+  --color-black: #000000;
+  --color-comment-bg: #fafafa;
+  --color-gray: #fff5f6;
+  --color-btn-hover-bg: #ecebeb;
+  --color-color-lines: #e1e1e1;
+  --color-dots: #d9d9d9;
+  --color-text-second: #907e82;
+  --color-text-primary: #000000;
+  --color-primary: #d41443;
+  --color-primary-hover: #d41342;
+  --color-primary-accent: #c7133e;
+  --color-secondary-title-color: #ffa5ba;
+  --color-bg-color: #ffb8ca;
+  --color-location-time-text: #fea5bb;
+  --color-cafe: #f0d1a5;
+  --color-food-truck: #c2e297;
+}
+
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Titan+One&display=swap');
 
 .hm {
   box-sizing: border-box;
-  background: #fff0f5 url('splashes.png') center / contain no-repeat;
+  background: var(--color-gray) url('splashes.png') center / contain no-repeat;
   padding: 80px 20px;
   font-family: 'Montserrat', sans-serif;
-  color: #4a4a4a;
+  color: var(--color-text-second);
   width: 100%;
   margin: 0;
 }
@@ -16,7 +36,7 @@
 }
 
 .hm__pre {
-  color: #ffa5b0;
+  color: var(--color-secondary-title-color);
   font-size: 18px;
   font-weight: 700;
   display: block;
@@ -25,7 +45,7 @@
 }
 
 .hm__ttl {
-  color: #d41443;
+  color: var(--color-primary);
   font-family: 'Titan One', cursive;
   font-size: clamp(32px, 5vw, 58px);
   margin: 0;
@@ -42,7 +62,7 @@
   margin-bottom: 80px;
 }
 
-.hm__img-wrap, .hm__info-wrap {
+.hm__visual, .hm__info {
   flex: 1 1 300px;
   max-width: 100%;
 }
@@ -55,6 +75,7 @@
 }
 
 .hm__txt {
+  color: var(--color-text-primary);
   font-size: 14px;
   line-height: 1.8;
   margin-bottom: 25px;
@@ -62,8 +83,8 @@
 
 .hm__btn {
   display: inline-block;
-  background: #ffffff;
-  color: #d41443;
+  background: var(--color-white);
+  color: var(--color-primary);
   padding: 12px 35px;
   border-radius: 25px;
   text-decoration: none;
@@ -73,8 +94,8 @@
 }
 
 .hm__btn:hover {
-  background: #d41443;
-  color: #fff;
+  background: var(--color-primary-hover);
+  color: var(--color-white);
   transform: translateY(-2px);
 }
 
@@ -103,12 +124,16 @@
 .hm__val {
   font-family: 'Titan One', cursive;
   font-size: clamp(24px, 4vw, 36px);
-  color: #d41443;
+  color: var(--color-primary);
+}
+
+@media (max-width: 1200px) {
+  .hm { padding: 60px 40px; }
 }
 
 @media (max-width: 1024px) {
-  .hm { padding: 60px 30px; }
   .hm__main { gap: 30px; }
+  .hm__stats { justify-content: center; }
 }
 
 @media (max-width: 768px) {
@@ -128,4 +153,5 @@
   .hm__ttl { font-size: 28px; }
   .hm__pre { font-size: 14px; }
   .hm__btn { width: 100%; box-sizing: border-box; text-align: center; }
+  .hm__txt { font-size: 13px; }
 }
