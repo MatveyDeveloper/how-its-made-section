@@ -25,7 +25,6 @@
   background: var(--color-gray) url('splashes.png') center / contain no-repeat;
   padding: 80px 20px;
   font-family: 'Montserrat', sans-serif;
-  color: var(--color-text-second);
   width: 100%;
   margin: 0;
 }
@@ -39,7 +38,6 @@
   color: var(--color-secondary-title-color);
   font-family: 'Titan One', cursive;
   font-size: 18px;
-  font-weight: 400;
   display: block;
   letter-spacing: 0.12em;
   margin-bottom: 15px;
@@ -52,7 +50,6 @@
   margin: 0;
   text-transform: uppercase;
   line-height: 1.1;
-  font-weight: 400;
 }
 
 .hm__main {
@@ -66,7 +63,7 @@
 
 .hm__visual, .hm__info {
   flex: 1 1 300px;
-  max-width: 100%;
+  max-width: 500px;
 }
 
 .hm__img {
@@ -92,69 +89,46 @@
   text-decoration: none;
   font-weight: 700;
   transition: 0.3s ease;
-  box-shadow: 0 4px 15px rgba(212, 20, 67, 0.1);
 }
 
 .hm__btn:hover {
   background: var(--color-primary-hover);
   color: var(--color-white);
-  transform: translateY(-2px);
 }
 
 .hm__stats {
   display: flex;
   flex-wrap: wrap;
-  gap: 20px;
-  justify-content: space-around;
+  gap: 30px;
+  justify-content: center;
 }
 
 .hm__item {
-  flex: 1 1 200px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
+  flex: 1 1 250px;
+  text-align: left;
 }
 
 .hm__icon {
   height: 50px;
-  width: auto;
   margin-bottom: 15px;
-  object-fit: contain;
 }
 
 .hm__val {
+  display: block;
   font-family: 'Titan One', cursive;
-  font-size: clamp(38px, 6vw, 58px);
+  font-size: clamp(36px, 5vw, 58px);
   color: var(--color-primary);
-  font-weight: 400;
+  margin-bottom: 10px;
 }
 
-@media (max-width: 1200px) {
-  .hm { padding: 60px 40px; }
-}
-
-@media (max-width: 1024px) {
-  .hm__main { gap: 30px; }
-  .hm__stats { justify-content: center; }
+.hm__stat-txt {
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--color-text-primary);
+  margin: 0;
 }
 
 @media (max-width: 768px) {
-  .hm { padding: 40px 15px; }
-  .hm__main { 
-    flex-direction: column;
-    text-align: center; 
-  }
-  .hm__stats {
-    flex-direction: column;
-    gap: 30px;
-  }
-  .hm__item { flex: 1 1 100%; }
-}
-
-@media (max-width: 480px) {
-  .hm__ttl { font-size: 28px; }
-  .hm__pre { font-size: 14px; }
-  .hm__btn { width: 100%; box-sizing: border-box; text-align: center; }
-  .hm__txt { font-size: 13px; }
+  .hm__main { flex-direction: column; text-align: center; }
+  .hm__item { text-align: center; }
 }
